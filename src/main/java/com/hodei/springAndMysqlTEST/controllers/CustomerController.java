@@ -1,5 +1,8 @@
-package com.hodei.springAndMysqlTEST;
+package com.hodei.springAndMysqlTEST.controllers;
 
+import com.hodei.springAndMysqlTEST.services.CustomerService;
+import com.hodei.springAndMysqlTEST.modules.Customer;
+import com.hodei.springAndMysqlTEST.modules.Profile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,10 +43,11 @@ public class CustomerController {
 
      */
     @RequestMapping(value="profile",method=RequestMethod.GET)
-    public ResponseEntity<Profile> getByPass(@RequestParam("email") String email,@RequestParam("pass") String password){
+    public ResponseEntity<Profile> getByPass(@RequestParam("email") String email, @RequestParam("pass") String password){
         try{
             Customer customer=customerService.getCustomerByPass(email,password);
            Profile profile=new Profile(customer);
+
             return new ResponseEntity<Profile>(profile, HttpStatus.OK);
         }catch(NoSuchElementException e){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

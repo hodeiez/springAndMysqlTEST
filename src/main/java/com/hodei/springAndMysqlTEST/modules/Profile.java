@@ -1,8 +1,6 @@
-package com.hodei.springAndMysqlTEST;
+package com.hodei.springAndMysqlTEST.modules;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.hodei.springAndMysqlTEST.modules.Customer;
 
 /**
  * Created by Hodei Eceiza
@@ -21,20 +19,20 @@ public class Profile {
     private String address;
     private String city;
     private String zip;
-    private boolean vip;
+  //  private boolean vip;
 
     public Profile(Customer customer){
 
 
-        this.name = customer.getName();
+        this.name = customer.getFirstname();
         this.lastname = customer.getLastname();
         this.email = customer.getEmail();
 
-        this.phone = customer.getPhone();
+        this.phone = customer.getTelephone();
         this.address = customer.getAddress();
         this.city = customer.getCity();
         this.zip = customer.getZip();
-        this.vip = customer.isVip();
+       // this.vip = customer.isVip();
     }
 
 
@@ -95,6 +93,7 @@ public class Profile {
         this.zip = zip;
     }
 
+    /*
     public boolean isVip() {
         return vip;
     }
@@ -102,4 +101,6 @@ public class Profile {
     public void setVip(boolean vip) {
         this.vip = vip;
     }
+
+     */
 }

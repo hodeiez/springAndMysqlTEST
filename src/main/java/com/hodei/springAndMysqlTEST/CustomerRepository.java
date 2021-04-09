@@ -1,5 +1,6 @@
 package com.hodei.springAndMysqlTEST;
 
+import com.hodei.springAndMysqlTEST.modules.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

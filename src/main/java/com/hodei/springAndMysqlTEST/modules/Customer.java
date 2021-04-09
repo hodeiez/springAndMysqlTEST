@@ -1,4 +1,4 @@
-package com.hodei.springAndMysqlTEST;
+package com.hodei.springAndMysqlTEST.modules;
 
 import javax.persistence.*;
 
@@ -13,30 +13,30 @@ import javax.persistence.*;
 @Table(name="customer")
 public class Customer {
     private int id;
-    private String name;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
-    private String phone;
+    private String telephone;
     private String address;
     private String city;
     private String zip;
-    private boolean vip;
+    //private boolean vip;
 
     public Customer(){
 
     }
-    public Customer(int id, String name, String lastname, String email, String password, String phone, String address, String city, String zip, boolean vip) {
+    public Customer(int id, String firstName, String lastname, String email, String password, String phone, String address, String city, String zip) {
         this.id = id;
-        this.name = name;
-        this.lastname = lastname;
+        this.firstName = firstName;
+        this.lastName = lastname;
         this.email = email;
         this.password = password;
-        this.phone = phone;
+        this.telephone = phone;
         this.address = address;
         this.city = city;
         this.zip = zip;
-        this.vip = vip;
+        //  this.vip = vip;
     }
 
     @Id
@@ -48,20 +48,20 @@ public class Customer {
         this.id=id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String name) {
+        this.firstName = name;
     }
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
     public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastName = lastname;
     }
 
     public String getEmail() {
@@ -80,12 +80,12 @@ public class Customer {
         this.password = password;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelephone(String phone) {
+        this.telephone = phone;
     }
 
     public String getAddress() {
@@ -111,7 +111,7 @@ public class Customer {
     public void setZip(String zip) {
         this.zip = zip;
     }
-
+/*
     public boolean isVip() {
         return vip;
     }
@@ -119,4 +119,6 @@ public class Customer {
     public void setVip(boolean vip) {
         this.vip = vip;
     }
+
+ */
 }
