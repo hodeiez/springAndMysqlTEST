@@ -1,6 +1,6 @@
 package com.hodei.springAndMysqlTEST.services;
 
-import com.hodei.springAndMysqlTEST.CustomerRepository;
+import com.hodei.springAndMysqlTEST.repos.CustomerRepository;
 import com.hodei.springAndMysqlTEST.modules.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
