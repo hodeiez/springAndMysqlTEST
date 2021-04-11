@@ -54,6 +54,7 @@ public class CustomerController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @CrossOrigin
     @PostMapping(value="/register",consumes="application/json",produces="application/json")
     public int add(@RequestBody Customer customer){
          customerService.saveCustomer(new Customer(customer.getId(), customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPassword(), customer.getTelephone(), customer.getAddress(), customer.getCity(), customer.getZip()));
