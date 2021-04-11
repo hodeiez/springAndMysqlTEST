@@ -3,6 +3,8 @@ package com.hodei.springAndMysqlTEST.services;
 import com.hodei.springAndMysqlTEST.repos.CustomerRepository;
 import com.hodei.springAndMysqlTEST.modules.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.QueryAnnotation;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -25,8 +27,9 @@ public class CustomerService {
 
     }
     public void saveCustomer(Customer customer){
-        customerRepository.save(customer);
+       customerRepository.save(customer);
     }
+
     public Customer getCustomer (Integer id){
         return customerRepository.findById(id).get();
     }

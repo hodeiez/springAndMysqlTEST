@@ -5,6 +5,7 @@ import com.hodei.springAndMysqlTEST.repos.CustomerRepository;
 import com.hodei.springAndMysqlTEST.repos.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -21,7 +22,7 @@ import java.util.List;
 public class ProductService {
     @Autowired
     private ProductRepository productRepository;
-
+    @CrossOrigin
     public List<Product> getAllProducts(){
         return productRepository.findAll();
     }

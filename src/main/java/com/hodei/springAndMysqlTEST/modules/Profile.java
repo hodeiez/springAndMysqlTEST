@@ -24,8 +24,8 @@ public class Profile {
     public Profile(Customer customer){
 
 
-        this.name = customer.getFirstname();
-        this.lastname = customer.getLastname();
+        this.name = customer.getFirstName();
+        this.lastname = customer.getLastName();
         this.email = customer.getEmail();
 
         this.phone = customer.getTelephone();

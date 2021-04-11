@@ -1,5 +1,7 @@
 package com.hodei.springAndMysqlTEST.modules;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 
 /**
@@ -12,20 +14,33 @@ import javax.persistence.*;
 @Entity
 @Table(name="customer")
 public class Customer {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column
     private int id;
+
+    @Column(name="firstname")
     private String firstName;
+    @Column(name="lastname")
     private String lastName;
+    @Column
     private String email;
+    @Column
     private String password;
+    @Column
     private String telephone;
+    @Column
     private String address;
+    @Column
     private String city;
+    @Column
     private String zip;
     //private boolean vip;
 
     public Customer(){
 
     }
+
     public Customer(int id, String firstName, String lastname, String email, String password, String phone, String address, String city, String zip) {
         this.id = id;
         this.firstName = firstName;
@@ -39,8 +54,8 @@ public class Customer {
         //  this.vip = vip;
     }
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+
+
     public int getId() {
         return id;
     }
@@ -48,19 +63,19 @@ public class Customer {
         this.id=id;
     }
 
-    public String getFirstname() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstname(String name) {
+    public void setFirstName(String name) {
         this.firstName = name;
     }
 
-    public String getLastname() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastname(String lastname) {
+    public void setLastName(String lastname) {
         this.lastName = lastname;
     }
 

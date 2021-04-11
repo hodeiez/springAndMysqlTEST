@@ -28,6 +28,7 @@ public class CustomerController {
     public List<Customer> list() {
         return customerService.listAllCustomer();
     }
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<Customer> get(@PathVariable Integer id) {
         try{
@@ -53,10 +54,13 @@ public class CustomerController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @PostMapping("/")
-    public void add(@RequestBody Customer customer){
-        customerService.saveCustomer(customer);
+    @PostMapping(value="/register",consumes="application/json",produces="application/json")
+    public int add(@RequestBody Customer customer){
+         customerService.saveCustomer(new Customer(customer.getId(), customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPassword(), customer.getTelephone(), customer.getAddress(), customer.getCity(), customer.getZip()));
+         return customer.getId();
     }
+
+
     @PutMapping("/{id}")
     public ResponseEntity<?> update (@RequestBody Customer customer, @PathVariable Integer id){
         try{
@@ -68,7 +72,8 @@ public class CustomerController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @DeleteMapping("/{id}")
+    @CrossOrigin
+    @DeleteMapping("/{id}/delete")
     public void delete(@PathVariable Integer id){
         customerService.deleteCustomer(id);
     }
